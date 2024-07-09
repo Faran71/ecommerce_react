@@ -3,7 +3,7 @@ import "./css/LogInPage.css"
 import NavBar from "../components/NavBar";
 import { useNavigate } from "react-router-dom";
 
-const LogInPage = ({user, setUser, allProducts, setAllProducts}) => {
+const LogInPage = ({user, setUser, allProducts, setAllProducts, orders, setOrders}) => {
     const navigate = useNavigate();
 
     // variables to allow user to login
@@ -163,7 +163,9 @@ const LogInPage = ({user, setUser, allProducts, setAllProducts}) => {
             setUser={setUser} 
             allProducts={allProducts}
             setAllProducts={setAllProducts}
-            className="log-in-navbar"/>
+            orders={orders}
+            setOrders={setOrders}
+            />
             {displayLogInOrRegister()}
         </div>
     )

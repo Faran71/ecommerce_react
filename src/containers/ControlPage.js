@@ -11,6 +11,7 @@ const ControlPage = () => {
     const [user, setUser] = useState(null);
     const [allProducts, setAllProducts] = useState(null);
     const [oneProductToView , setOneProductToView] = useState(null);
+    const [orders, setOrders] = useState([]);
 
     // Function to get all the products
     const getAllProducts = async () => {
@@ -37,7 +38,9 @@ const ControlPage = () => {
                     user={user}
                     setUser={setUser}
                     allProducts={allProducts}
-                    setAllProducts={setAllProducts}/>} 
+                    setAllProducts={setAllProducts}
+                    orders={orders}
+                    setOrders={setOrders}/>} 
                     key={1}/>
 
                     <Route path="/products" 
@@ -47,7 +50,9 @@ const ControlPage = () => {
                     allProducts={allProducts}
                     setAllProducts={setAllProducts}
                     oneProductToView={oneProductToView}
-                    setOneProductToView={setOneProductToView}/>} 
+                    setOneProductToView={setOneProductToView}
+                    orders={orders}
+                    setOrders={setOrders}/>} 
                     key={2}/>
 
                     <Route path="/oneProduct" 
@@ -55,7 +60,10 @@ const ControlPage = () => {
                     user={user}
                     setUser={setUser} 
                     allProducts={allProducts}
-                    setAllProducts={setAllProducts}/>} 
+                    setAllProducts={setAllProducts}
+                    oneProductToView={oneProductToView}
+                    orders={orders}
+                    setOrders={setOrders}/>} 
                     key={3}/>
 
                     <Route path="/logIn" 
@@ -63,7 +71,9 @@ const ControlPage = () => {
                     user={user}
                     setUser={setUser}
                     allProducts={allProducts}
-                    setAllProducts={setAllProducts}/>} 
+                    setAllProducts={setAllProducts}
+                    orders={orders}
+                    setOrders={setOrders}/>} 
                     key={4}/>
 
                     <Route path="/account" 
@@ -71,7 +81,9 @@ const ControlPage = () => {
                     user={user}
                     setUser={setUser}
                     allProducts={allProducts}
-                    setAllProducts={setAllProducts}/>} 
+                    setAllProducts={setAllProducts}
+                    orders={orders}
+                    setOrders={setOrders}/>} 
                     key={5}/>
                 </Routes>
             </BrowserRouter>

@@ -1,0 +1,19 @@
+.one-product-page-display {
+    width: 100vw;
+    height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 1vh;
+}
+
+.image img {
+    height: 60vh;
+    width: 40vw;
+    
+}
+
+.info {
+    width: 40vw;
+}

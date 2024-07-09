@@ -2,13 +2,19 @@ import { useState } from "react";
 import "./css/NavBar.css";
 import { useNavigate } from "react-router-dom";
 
-const NavBar = ({user, setUser, allProducts, setAllProducts}) => {
+const NavBar = ({user, setUser, allProducts, setAllProducts, orders, setOrders}) => {
     const navigate = useNavigate();
 
     const [dropdownVisible, setDropdownVisible] = useState(false);
 
     const handleDropdownToggle = () => {
         setDropdownVisible(!dropdownVisible);
+    };
+    
+    const [dropdownVisibleCart, setDropdownVisibleCart] = useState(false);
+
+    const handleDropdownToggleCart = () => {
+        setDropdownVisibleCart(!dropdownVisibleCart);
     };
 
     const [dropdownVisibleCategories, setDropdownVisibleCategories] = useState(false);
@@ -102,6 +108,31 @@ const NavBar = ({user, setUser, allProducts, setAllProducts}) => {
         navigate("/products");
     }
 
+    const displayCart = () => {
+        if(orders && orders.length > 0){
+            return (
+                <div className="dropdown-menu">
+                    {orders.map((order) => {
+                        return(
+                            <button className="dropdown-item">
+                                {order.product.name}, {order.quantity_sold}
+                            </button>
+                        )
+                    })}
+                    <button className="navbar-link" onClick={() => navigate("/account")}>Pay</button>
+                </div>
+                
+            )  
+        } else {
+            return(
+                <div className="dropdown-menu">
+                    <button className="dropdown-item">No Orders</button>
+                </div>
+                
+            )
+        }
+    }
+
     return(
         <div>
             <nav className="navbar">
@@ -144,6 +175,15 @@ const NavBar = ({user, setUser, allProducts, setAllProducts}) => {
                                 <button className="dropdown-item" value="500,1000" onClick={handlePriceButton}>£500 - £1000</button>
                                 <button className="dropdown-item" value="1000,1000000" onClick={handlePriceButton}>£1000+</button>
                             </div>
+                        )}
+                    </li>
+                    
+                    <li className="navbar-item">    
+                        <button onClick={handleDropdownToggleCart} className="navbar-link">
+                            Cart ({orders.length})
+                        </button>
+                        {dropdownVisibleCart && (
+                            displayCart()
                         )}
                     </li>
 

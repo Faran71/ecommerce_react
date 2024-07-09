@@ -1,0 +1,16 @@
+.product-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.products-page-display {
+    width: 100vw;
+    height: 85vh;
+    overflow: scroll;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 5vw;
+    row-gap: 1vh;
+}

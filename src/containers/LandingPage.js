@@ -1,7 +1,7 @@
 import NavBar from "../components/NavBar";
 import "./css/LandingPage.css"
 
-const LandingPage = ({user, setUser, allProducts, setAllProducts}) => {
+const LandingPage = ({user, setUser, allProducts, setAllProducts, orders, setOrders}) => {
 
     return(
         <div>
@@ -9,7 +9,9 @@ const LandingPage = ({user, setUser, allProducts, setAllProducts}) => {
             user={user} 
             setUser={setUser}
             allProducts={allProducts}
-            setAllProducts={setAllProducts}/>
+            setAllProducts={setAllProducts}
+            orders={orders}
+            setOrders={setOrders}/>
             
             <p>h</p>
         </div>

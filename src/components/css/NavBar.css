@@ -25,7 +25,7 @@
     color: white;
     padding: 10px 20px;
     cursor: pointer;
-    width: 15vw;
+    width: 12vw;
 }
 
 .navbar-link:hover {
@@ -39,7 +39,7 @@
     left: 0;
     background-color: #444;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 15vw;
+    width: 12vw;
 }
 
 .dropdown-item {
@@ -48,7 +48,7 @@
     color: white;
     padding: 10px 20px;
     cursor: pointer;
-    width: 14vw;
+    width: 11vw;
     text-align: left;
 }
 

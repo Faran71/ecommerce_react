@@ -1,0 +1,26 @@
+.single-product-display {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    height: 40vh;
+    border-style: solid;
+    border-bottom: solid;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.single-product-display:hover {
+    background-color: grey;
+}
+
+.single-product-display img {
+    width: 20vw;
+    height: 25vh;
+    border-style: solid;
+    margin-left: 2.5vw;
+}
+
+.single-product-display div p {
+    width: 25vw;
+
+}
