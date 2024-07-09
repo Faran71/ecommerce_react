@@ -3,12 +3,13 @@
     flex-direction: column;
     height: 100vh;
     background-color: #00A6A4;
+    overflow: hidden;
 }
 
 .products-page-display {
     width: 100vw;
-    height: 85vh;
-    overflow: scroll;
+    height: 100vh;
+    /* overflow: scroll; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -20,7 +21,9 @@
     display: flex;
     flex-direction: row;
     width: 100vw;
+    height: 4vh;
     justify-content: center;
+    padding-top: 1vh;
 }
 
 .search-bar input{

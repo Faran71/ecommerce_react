@@ -1,0 +1,10 @@
+.each-page-pagination {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 2vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}

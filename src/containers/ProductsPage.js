@@ -3,6 +3,7 @@ import DisplaySingleProduct from "../components/DisplaySingleProduct";
 import NavBar from "../components/NavBar";
 import "./css/ProductsPage.css"
 import { useState } from "react";
+import Pagination from "../components/Pagination";
 
 const ProductsPage = ({user, setUser, allProducts, setAllProducts, oneProductToView, setOneProductToView, orders, setOrders}) => {
     const navigate = useNavigate();
@@ -11,16 +12,18 @@ const ProductsPage = ({user, setUser, allProducts, setAllProducts, oneProductToV
 
     const checkWhetherThereIsProducts = () => {
         if(allProducts && allProducts.length > 0){
-            return allProducts.map((temp) => {
-                return(
-                    <div >
-                        <DisplaySingleProduct 
-                        product={temp}
-                        setOneProductToView={setOneProductToView}
-                        className="product-div"/>
-                    </div>
-                )
-            })
+            // return allProducts.map((temp) => {
+            //     return(
+            //         <div >
+            //             {/* <DisplaySingleProduct 
+            //             product={temp}
+            //             setOneProductToView={setOneProductToView}
+            //             className="product-div"/> */}
+                        
+            //         </div>
+            //     )
+            // })
+            return <Pagination allProducts={allProducts} setOneProductToView={setOneProductToView}/>
         } else {
             return(
                 <div>

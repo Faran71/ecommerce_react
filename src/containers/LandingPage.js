@@ -20,6 +20,8 @@ const LandingPage = ({user, setUser, allProducts, setAllProducts, orders, setOrd
             navigate("/products")
         } else {
             setAllProducts([]);
+            navigate("/products")
+            setSearch("")
         }
     }
 
@@ -39,6 +41,8 @@ const LandingPage = ({user, setUser, allProducts, setAllProducts, orders, setOrd
             setAllProducts={setAllProducts}
             orders={orders}
             setOrders={setOrders}/>
+
+            <h2>Welcome to the only store you need</h2>
             
             <form onSubmit={handleSearchBar} className="search-bar-landing">
                 <input type="text"

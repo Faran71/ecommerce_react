@@ -174,7 +174,7 @@ const OneProductPage = ({user, setUser, allProducts, setAllProducts, oneProductT
                 <div className="one-product-page-display">
                     <div className="image">
                         <img src={oneProductToView.image_url} />
-                        <form onSubmit={checkWhetherUserIsLoggedIn}>
+                        <form onSubmit={checkWhetherUserIsLoggedIn} className="left-form">
                             <input type="number"
                             placeholder="Enter the amount to deposit"
                             min={0}

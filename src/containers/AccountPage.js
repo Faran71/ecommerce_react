@@ -20,7 +20,7 @@ const AccountPage = ({user, setUser, allProducts, setAllProducts, orders, setOrd
     }
 
     const handleDelete = (id) => {
-        setOrders(orders.filter(order => order.id !== id))
+        setOrders(orders.filter(temp => temp.id !== id))
     }
 
     const postOrder = async (user_id, product_id, quantity_sold) => {
@@ -62,10 +62,12 @@ const AccountPage = ({user, setUser, allProducts, setAllProducts, orders, setOrd
         getUser();
     }
 
+    const [totalCost,setTotalCost] = useState(0);
+
     const displayOrder = () => {
         if(orders.length > 0){
             return (
-            <div>
+            <div className="order-item">
                 {orders.map((order) => {
                 return(
                     <div className="individual-order-item">
@@ -77,8 +79,9 @@ const AccountPage = ({user, setUser, allProducts, setAllProducts, orders, setOrd
                     </div>
                 )
                 })}
-                <div>
-                    <button onClick={() => handleBuy()}>Buy</button>
+                <div className="items-top">
+                    <p>Total Cost: £{totalCost}</p>
+                    <button onClick={() => handleBuy()} >Buy</button>
                 </div>
             </div>
                 )
@@ -114,9 +117,15 @@ const AccountPage = ({user, setUser, allProducts, setAllProducts, orders, setOrd
             navigate("/")
         }
         getAllOrders();
+        if(orders.length>0){
+            setTotalCost(0);
+            orders.map((order) => {
+                setTotalCost(totalCost+(order.quantity_sold * order.product.price))
+            })
+        }
     },[])
     return(
-        <div>
+        <div className="account-page">
             <NavBar 
             user={user} 
             setUser={setUser} 
@@ -128,12 +137,13 @@ const AccountPage = ({user, setUser, allProducts, setAllProducts, orders, setOrd
             <div>
                 <h3>Current Orders</h3>
                 {displayOrder()}
-                
             </div>
 
             <div>
                 <h3>Previous orders</h3>
-                {displayOldOrders()}
+                <div className="order-item">
+                    {displayOldOrders()}
+                </div> 
             </div>
         </div>
     )

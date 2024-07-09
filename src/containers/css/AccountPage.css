@@ -1,14 +1,65 @@
+.account-page {
+    background-color: #7FD1AE;
+    min-height: 100vh;
+}
+
 .individual-order-item img{
     width: 5vh;
+    height: 5vh;
+}
+
+.order-item {
+    width: 97vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vh;
+    background-color: #CEEEE0;
+    margin-left: 1.5vw;
+    /* border-bottom: solid; */
 }
 
 .individual-order-item {
     display: flex;
     flex-direction: row;
     width: 95vw;
+    height: auto;
     justify-content: space-between;
+    align-items: center;
+    border-bottom: solid;
 }
 
 .individual-order-item button {
     width: 10vw;
+    background-color: #7FD1AE;
+}
+
+.individual-order-item p {
+    width: 21vw;
+    height: auto;
+}
+
+.items-top {
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.items-top button {
+    width: 20vw;
+    height: 5vh;
+    background-color: #7FD1AE;
+}
+
+@media(max-width: 800px){
+    .items-top {
+        display: flex;
+        flex-direction: column;
+        width: 40vw;
+        justify-content: space-around;
+        margin-bottom: 2vh;
+    }
 }
