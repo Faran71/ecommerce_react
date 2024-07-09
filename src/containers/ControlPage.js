@@ -4,18 +4,75 @@ import ProductsPage from "./ProductsPage";
 import OneProductPage from "./OneProductPage";
 import LogInPage from "./LogInPage";
 import AccountPage from "./AccountPage";
+import { useEffect, useState } from "react";
 
 const ControlPage = () => {
 
+    const [user, setUser] = useState(null);
+    const [allProducts, setAllProducts] = useState(null);
+    const [oneProductToView , setOneProductToView] = useState(null);
+
+    // Function to get all the products
+    const getAllProducts = async () => {
+        const newResponse = await fetch(`http://localhost:3000/products`,{
+            method: "GET",
+            headers: {"Content-Type": "application/json"},
+            // body:JSON.stringify(temp)
+        })
+        if(newResponse.status === 200){
+            const newC = await newResponse.json();
+            setAllProducts(newC);
+        }
+    }
+
+    useEffect(() => {
+        getAllProducts();
+    },[])
     return(
         <div>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<LandingPage />} key={1}/>
-                    <Route path="/products" element={<ProductsPage />} key={2}/>
-                    <Route path="/oneProduct" element={<OneProductPage />} key={3}/>
-                    <Route path="/logIn" element={<LogInPage />} key={4}/>
-                    <Route path="/account" element={<AccountPage />} key={5}/>
+                    <Route path="/" 
+                    element={<LandingPage 
+                    user={user}
+                    setUser={setUser}
+                    allProducts={allProducts}
+                    setAllProducts={setAllProducts}/>} 
+                    key={1}/>
+
+                    <Route path="/products" 
+                    element={<ProductsPage 
+                    user={user}
+                    setUser={setUser}
+                    allProducts={allProducts}
+                    setAllProducts={setAllProducts}
+                    oneProductToView={oneProductToView}
+                    setOneProductToView={setOneProductToView}/>} 
+                    key={2}/>
+
+                    <Route path="/oneProduct" 
+                    element={<OneProductPage
+                    user={user}
+                    setUser={setUser} 
+                    allProducts={allProducts}
+                    setAllProducts={setAllProducts}/>} 
+                    key={3}/>
+
+                    <Route path="/logIn" 
+                    element={<LogInPage 
+                    user={user}
+                    setUser={setUser}
+                    allProducts={allProducts}
+                    setAllProducts={setAllProducts}/>} 
+                    key={4}/>
+
+                    <Route path="/account" 
+                    element={<AccountPage 
+                    user={user}
+                    setUser={setUser}
+                    allProducts={allProducts}
+                    setAllProducts={setAllProducts}/>} 
+                    key={5}/>
                 </Routes>
             </BrowserRouter>
         </div>

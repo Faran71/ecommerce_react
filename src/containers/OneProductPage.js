@@ -1,10 +1,15 @@
+import NavBar from "../components/NavBar";
 import "./css/OneProductPage.css"
 
-const OneProductPage = () => {
+const OneProductPage = ({user, setUser, allProducts, setAllProducts}) => {
 
     return(
         <div>
-            <p>one product</p>
+            <NavBar 
+            user={user} 
+            setUser={setUser} 
+            allProducts={allProducts}
+            setAllProducts={setAllProducts}/>
         </div>
     )
 

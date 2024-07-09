@@ -1,9 +1,14 @@
+import NavBar from "../components/NavBar";
 import "./css/AccountPage.css"
-const AccountPage = () => {
+const AccountPage = ({user, setUser, allProducts, setAllProducts}) => {
 
     return(
         <div>
-            <p>acounts</p>
+            <NavBar 
+            user={user} 
+            setUser={setUser} 
+            allProducts={allProducts}
+            setAllProducts={setAllProducts}/>
         </div>
     )
 

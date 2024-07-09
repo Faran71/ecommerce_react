@@ -1,0 +1,44 @@
+.register-user {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.register-user form {
+    display: flex;
+    flex-direction: column;
+    /* height: 70vh; */
+    justify-content: space-around;
+}
+
+.register-user form input, button {
+    width: 50vw;
+    height: 5vh;
+}
+
+.log-in {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.log-in form {
+    display: flex;
+    flex-direction: column;
+    /* height: 70vh; */
+    justify-content: space-around;
+}
+
+.log-in form input, button {
+    width: 50vw;
+    height: 5vh;
+}
+
+.log-in-main {
+    width: 100vw;
+    overflow: hidden;
+}
