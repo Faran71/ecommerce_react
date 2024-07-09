@@ -1,0 +1,26 @@
+.review {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    width: 33vw;
+}
+
+.review-top {
+    display: flex;
+    flex-direction: row;
+    width: 30vw;
+    justify-content: space-around;
+}
+
+.review-top p {
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+}
+
+.review-bottom {
+    display: flex;
+    width: 30vw;
+    justify-content: center;
+    padding-bottom: 1vh;
+}

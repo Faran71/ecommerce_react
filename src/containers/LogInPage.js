@@ -70,36 +70,37 @@ const LogInPage = ({user, setUser, allProducts, setAllProducts, orders, setOrder
             body:JSON.stringify(temp)
         })
 
-        if(firstName!=="" && lastName!=="" && registerEmail!=="" && registerPassword!=="" && wallet !== null){
-            setFillInputs(true);
-            if(newResponse.status === 201){
-                const newC = await newResponse.json();
-                setUser(newC);
-                navigate("/account");
-                setFirstName("");
-                setLastName("");
-                setRegisterEmail("");
-                setRegisterPassword("");
-                setWallet(null);
-                setEmailInUse(true);
-            } else {
-                setEmailInUse(false);
-            }
+        if(newResponse.status === 201){
+            const newC = await newResponse.json();
+            setUser(newC);
+            navigate("/account");
+            setFirstName("");
+            setLastName("");
+            setRegisterEmail("");
+            setRegisterPassword("");
+            setWallet(null);
+            setEmailInUse(true);
         } else {
-            setFillInputs(false);
+            setEmailInUse(false);
         }
+        
         
     }
 
     const handleRegisterUserForm = (event) => {
         event.preventDefault();
-        postRegisterUser(firstName,lastName,registerEmail,registerPassword,wallet);
+        if(firstName!=="" && lastName!=="" && registerEmail!=="" && registerPassword!=="" && wallet !== null){
+            setFillInputs(true);
+            postRegisterUser(firstName,lastName,registerEmail,registerPassword,wallet);
+        } else {
+            setFillInputs(false);
+        }
     }
 
     const displayLogInOrRegister = () => {
         if(showLogIn){
             return(
-                <div className="log-in">
+                <div className="log-in-top">
                     <form onSubmit={handleLogInForm}>
                         <input type="text"
                         placeholder="Email"
@@ -118,7 +119,7 @@ const LogInPage = ({user, setUser, allProducts, setAllProducts, orders, setOrder
             )
         } else {
             return(
-                <div className="register-user">
+                <div className="log-in-top">
                     <form onSubmit={handleRegisterUserForm}>
                         <input type="text"
                         placeholder="First Name"

@@ -1,0 +1,14 @@
+.individual-order-item img{
+    width: 5vh;
+}
+
+.individual-order-item {
+    display: flex;
+    flex-direction: row;
+    width: 95vw;
+    justify-content: space-between;
+}
+
+.individual-order-item button {
+    width: 10vw;
+}

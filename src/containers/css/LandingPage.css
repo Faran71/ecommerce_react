@@ -1,0 +1,44 @@
+.landing-page {
+    background-color: #7FD1AE;
+    height: 100vh;
+}
+
+.search-bar-landing {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: center;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar-landing input{
+    border-radius: 9vh;
+    width: 60vw;
+    height: 5vh;
+    text-align: center;
+}
+
+.search-bar-landing button {
+    width: 10vw;
+    height: 5vh;
+    border-radius: 9vh;
+}
+
+.btm {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: space-around;
+}
+
+.btm p {
+    background-color: #00A6A4;
+    width: 20vh;
+    height: 20vh;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}

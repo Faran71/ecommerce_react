@@ -1,7 +1,11 @@
 .navbar {
-    background-color: #333;
+    background-color: #616163;
     padding: 10px;
     display: flex;
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .navbar-menu {

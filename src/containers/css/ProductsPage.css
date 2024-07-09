@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background-color: #00A6A4;
 }
 
 .products-page-display {
@@ -13,4 +14,22 @@
     flex-wrap: wrap;
     column-gap: 5vw;
     row-gap: 1vh;
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: center;
+}
+
+.search-bar input{
+    border-radius: 9vh;
+    width: 60vw;
+    text-align: center;
+}
+
+.search-bar button {
+    width: 10vw;
+    border-radius: 9vh;
 }

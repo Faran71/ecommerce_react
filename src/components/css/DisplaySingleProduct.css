@@ -7,10 +7,14 @@
     border-bottom: solid;
     justify-content: space-around;
     text-align: center;
+    background-color: white;
+    border-radius: 13px;
 }
 
 .single-product-display:hover {
     background-color: grey;
+    box-shadow: 0 0 15px 5px black; /* Glowing border effect */
+  transform: scale(1.05); /* Slightly enlarge the div */
 }
 
 .single-product-display img {

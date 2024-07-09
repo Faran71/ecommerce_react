@@ -28,8 +28,8 @@ const NavBar = ({user, setUser, allProducts, setAllProducts, orders, setOrders})
         if(user){
             return(
                 <li className="navbar-item">
-                    <button onClick={() => navigate("/account")} className="navbar-link">Hi {user.first_name}</button>
-                    <button onClick={() => {setUser(null); navigate("/")}} className="navbar-link">Log out</button>
+                    <button onClick={() => navigate("/account")} className="navbar-link">Hi {user.first_name}, £{user.wallet}</button>
+                    <button onClick={() => {setUser(null); setOrders([]); navigate("/")}} className="navbar-link">Log out</button>
                 </li>
             )
         } else {

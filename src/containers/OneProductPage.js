@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import "./css/OneProductPage.css"
 import { useEffect, useState } from "react";
+import DisplayReview from "../components/DisplayReview";
 
 const OneProductPage = ({user, setUser, allProducts, setAllProducts, oneProductToView, orders, setOrders}) => {
     const navigate = useNavigate();
@@ -11,6 +12,7 @@ const OneProductPage = ({user, setUser, allProducts, setAllProducts, oneProductT
     const [hideFundsMessage, setHandleFundsMessage] = useState(true);
     const [hideStockMessage, setHideStockMessage] = useState(true);
     const [hideLogInMessage, setHideLogInMessage] = useState(true);
+
 
     const addPurchaseToOrder = () => {
         setOrders(orders => [...orders,{
@@ -84,9 +86,86 @@ const OneProductPage = ({user, setUser, allProducts, setAllProducts, oneProductT
         }
     }
 
+    const displayReviews = () => {
+        if(reviews.length > 0){
+            return(
+                reviews.map((review) => {
+                    return(
+                        <div>
+                            <DisplayReview review={review}/>
+                        </div>
+                    )
+                })
+            )
+        } else {
+            return(
+                <div>
+                    <p>no reviews</p>
+                </div>
+            )
+        }
+    }
 
+    // variable to hold the review by user
+    const [comment, setComment] = useState("");
+
+// handle review section on page
+    const postReview = async (user,oneProductToView,comment) => {
+        let temp = {
+            user_id: user.id,
+            product_id: oneProductToView.id,
+            comment: comment
+        }
+        const newResponse = await fetch(`http://localhost:3000/reviews`,{
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body:JSON.stringify(temp)
+        })
+        if(newResponse.status === 201){
+            const newC = await newResponse.json();
+            // setReviews(newC);
+            setComment("")
+            getReviews();
+        }  
+    }
+
+    // variable to alert user when review box is empty
+    const [hideMessage, setHideMessage] = useState(true);
+
+    const handleLeaveReview = (event) => {
+        event.preventDefault();
+        if(comment !== ""){
+            setHideMessage(true);
+            postReview(user, oneProductToView,comment);
+        } else {
+            setHideMessage(false);
+        }
+    }
+
+    const displayLeaveReview = () => {
+        if(user) {
+            return(
+                <div className="leave-review">
+                    <form onSubmit={handleLeaveReview}>
+                        <input type="text"
+                        placeholder="Leave a review..."
+                        value={comment}
+                        onChange={(e) => setComment(e.target.value)}/>
+                        <button type="submit">Submit</button>
+                        <p hidden={hideMessage} style={{color:"red"}}>Please fill in all fields</p>
+                    </form>                    
+                </div>
+            )
+        }
+    }
+
+
+
+
+    // This will rerun everytime this page opens
     useEffect(() => {
         setQuantity(null);
+        getReviews();
     },[])
     
     const displayProduct = () => {
@@ -112,6 +191,10 @@ const OneProductPage = ({user, setUser, allProducts, setAllProducts, oneProductT
                         <p>Price: £{oneProductToView.price}</p>
                         <p>{oneProductToView.description}</p>
                         <p>Reviews</p>
+                        <div className="display-reviews">
+                            {displayReviews()}
+                        </div>
+                        {displayLeaveReview()}
                     </div>
                 </div>
             )
