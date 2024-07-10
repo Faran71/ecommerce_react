@@ -43,7 +43,7 @@ const NavBar = ({user, setUser, allProducts, setAllProducts, orders, setOrders})
 
     // Function to get all the products
     const getAllProducts = async () => {
-        const newResponse = await fetch(`http://localhost:3000/products`,{
+        const newResponse = await fetch(`http://13.41.197.49:3000/products`,{
             method: "GET",
             headers: {"Content-Type": "application/json"},
             // body:JSON.stringify(temp)
@@ -62,7 +62,7 @@ const NavBar = ({user, setUser, allProducts, setAllProducts, orders, setOrders})
 
     // Handle getting products filtered by categories
     const getProductsByCategory = async (category) => {
-        const newResponse = await fetch(`http://localhost:3000/products/filter_by_category/${category}`,{
+        const newResponse = await fetch(`http://13.41.197.49:3000/products/filter_by_category/${category}`,{
             method: "GET",
             headers: {"Content-Type": "application/json"},
             // body:JSON.stringify(temp)
@@ -85,7 +85,7 @@ const NavBar = ({user, setUser, allProducts, setAllProducts, orders, setOrders})
 
     // Handle getting products filtered by price
     const getProductsByPrice = async (minValue,maxValue) => {
-        const newResponse = await fetch(`http://localhost:3000/products/filter_by_price/${minValue}/${maxValue}`,{
+        const newResponse = await fetch(`http://13.41.197.49:3000/products/filter_by_price/${minValue}/${maxValue}`,{
             method: "GET",
             headers: {"Content-Type": "application/json"},
             // body:JSON.stringify(temp)

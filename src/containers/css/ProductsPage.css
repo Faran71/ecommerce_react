@@ -35,4 +35,6 @@
 .search-bar button {
     width: 10vw;
     border-radius: 9vh;
+    background-color: #006964;
+    color: white;
 }

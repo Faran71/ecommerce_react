@@ -27,10 +27,11 @@ const Pagination = ({allProducts, setOneProductToView}) => {
             </div>
 
       {/* Pagination buttons */}
-      <div>
+      <div className="next-btn">
         <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
           Previous
         </button>
+        <p>{currentPage} / {Math.ceil((allProducts.length) / 6)}</p>
         <button onClick={() => setCurrentPage(currentPage + 1)} disabled={indexOfLastItem >= allProducts.length}>
           Next
         </button>

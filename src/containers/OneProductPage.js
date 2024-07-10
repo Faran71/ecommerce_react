@@ -75,7 +75,7 @@ const OneProductPage = ({user, setUser, allProducts, setAllProducts, oneProductT
     const [reviews, setReviews] = useState([]);
 
     const getReviews = async () => {
-        const newResponse = await fetch(`http://localhost:3000/reviews/filter_by_product/${oneProductToView.id}`,{
+        const newResponse = await fetch(`http://13.41.197.49:3000/reviews/filter_by_product/${oneProductToView.id}`,{
             method: "GET",
             headers: {"Content-Type": "application/json"},
             // body:JSON.stringify(temp)
@@ -116,7 +116,7 @@ const OneProductPage = ({user, setUser, allProducts, setAllProducts, oneProductT
             product_id: oneProductToView.id,
             comment: comment
         }
-        const newResponse = await fetch(`http://localhost:3000/reviews`,{
+        const newResponse = await fetch(`http://13.41.197.49:3000/reviews`,{
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body:JSON.stringify(temp)

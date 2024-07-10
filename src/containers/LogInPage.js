@@ -31,7 +31,7 @@ const LogInPage = ({user, setUser, allProducts, setAllProducts, orders, setOrder
             email: logInEmail,
             password: logInPassword
         }
-        const newResponse = await fetch(`http://localhost:3000/users/authenticate`,{
+        const newResponse = await fetch(`http://13.41.197.49:3000/users/authenticate`,{
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body:JSON.stringify(temp)
@@ -64,7 +64,7 @@ const LogInPage = ({user, setUser, allProducts, setAllProducts, orders, setOrder
             password: registerPassword,
             wallet: wallet
         }
-        const newResponse = await fetch(`http://localhost:3000/users`,{
+        const newResponse = await fetch(`http://13.41.197.49:3000/users`,{
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body:JSON.stringify(temp)

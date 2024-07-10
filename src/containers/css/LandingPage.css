@@ -1,6 +1,7 @@
 .landing-page {
     background-color: #7FD1AE;
     height: 100vh;
+    overflow: hidden;
 }
 
 .search-bar-landing {
@@ -8,7 +9,7 @@
     flex-direction: row;
     width: 100vw;
     justify-content: center;
-    height: 50vh;
+    height: 45vh;
     justify-content: center;
     align-items: center;
 }

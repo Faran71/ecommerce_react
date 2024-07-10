@@ -8,7 +8,7 @@ const AccountPage = ({user, setUser, allProducts, setAllProducts, orders, setOrd
     const [allOrders, setAllOrders] = useState([]);
 
     const getAllOrders = async () => {
-        const newResponse = await fetch(`http://localhost:3000/orders/filter_by_user/${user.id}`,{
+        const newResponse = await fetch(`http://13.41.197.49:3000/orders/filter_by_user/${user.id}`,{
             method: "GET",
             headers: {"Content-Type": "application/json"},
             // body:JSON.stringify(temp)
@@ -29,7 +29,7 @@ const AccountPage = ({user, setUser, allProducts, setAllProducts, orders, setOrd
             product_id: product_id,
             quantity_sold: quantity_sold
         }
-        const newResponse = await fetch(`http://localhost:3000/orders`,{
+        const newResponse = await fetch(`http://13.41.197.49:3000/orders`,{
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body:JSON.stringify(temp)
@@ -44,7 +44,7 @@ const AccountPage = ({user, setUser, allProducts, setAllProducts, orders, setOrd
 
     // this is to get user information again so wallet is correct
     const getUser = async () => {
-        const newResponse = await fetch(`http://localhost:3000/users/${user.id}`,{
+        const newResponse = await fetch(`http://13.41.197.49:3000/users/${user.id}`,{
             method: "GET",
             headers: {"Content-Type": "application/json"},
             // body:JSON.stringify(temp)

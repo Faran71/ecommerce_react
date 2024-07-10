@@ -15,7 +15,7 @@ const ControlPage = () => {
 
     // Function to get all the products
     const getAllProducts = async () => {
-        const newResponse = await fetch(`http://localhost:3000/products`,{
+        const newResponse = await fetch(`http://13.41.197.49:3000/products`,{
             method: "GET",
             headers: {"Content-Type": "application/json"},
             // body:JSON.stringify(temp)
