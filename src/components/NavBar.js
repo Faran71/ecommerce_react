@@ -137,7 +137,7 @@ const NavBar = ({user, setUser, allProducts, setAllProducts, orders, setOrders})
         <div>
             <nav className="navbar">
                 <button className="navbar-link" onClick={() => navigate("/")}>
-                    Logo
+                    Trust
                 </button>
                 <ul className="navbar-menu">
                     <li className="navbar-item">
@@ -149,7 +149,7 @@ const NavBar = ({user, setUser, allProducts, setAllProducts, orders, setOrders})
 
                     <li className="navbar-item">
                         <button onClick={handleDropdownToggleCategories} className="navbar-link">
-                            Categories
+                            Filter
                         </button>
                         {dropdownVisibleCategories && (
                             <div className="dropdown-menu">
@@ -165,7 +165,7 @@ const NavBar = ({user, setUser, allProducts, setAllProducts, orders, setOrders})
 
                     <li className="navbar-item">    
                         <button onClick={handleDropdownToggle} className="navbar-link">
-                            Prices
+                            £££
                         </button>
                         {dropdownVisible && (
                             <div className="dropdown-menu">
